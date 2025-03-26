@@ -1,0 +1,175 @@
+{
+  "name": "PRESS",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "create press",
+      "filename": "create press.bru",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:9090/api/press",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"contactPersonName\": \"Aohn Doe\",\n  \"pressName\": \"Press Corp\",\n  \"phoneNumber\": \"+1234567890\",\n  \"totalPrints\": 1500,\n  \"outstandingAmount\": 1200.50,\n  \"lastPaidAmount\": 500.75\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "delete press",
+      "filename": "delete press.bru",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:9090/api/press/1",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "get all press",
+      "filename": "get all press.bru",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:9090/api/press?pageNumber=0&pageSize=10&sortOrder=asc&sortBy=contactPersonName",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "pageNumber",
+            "value": "0",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "pageSize",
+            "value": "10",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "sortOrder",
+            "value": "asc",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "sortBy",
+            "value": "contactPersonName",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "pre fetch press",
+      "filename": "pre fetch press.bru",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:9090/api/press/fetch",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "update press",
+      "filename": "update press.bru",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:9090/api/press/2",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n   \"contactPersonName\": \"Josh Corp\",\n    \"pressName\": \"Press Corp\",\n    \"phoneNumber\": \"+1234567890\",\n    \"totalPrints\": 15000,\n    \"outstandingAmount\": 1200.50,\n    \"lastPaymentDate\": null,\n    \"lastPaidAmount\": 500.75\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "PRESS",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0012350082397460938,
+    "filesCount": 5
+  }
+}

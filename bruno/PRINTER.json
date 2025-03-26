@@ -1,0 +1,124 @@
+{
+  "name": "PRINTER",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "add print",
+      "filename": "add print.bru",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:9090/api/print",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"customerName\": \"john Doe\",\n  \"printDetails\": \"Business cards with QR code\",\n  \"mediaType\": \"Cardstock\",\n  \"size\": \"3.5 x 2 inches\",\n  \"quantity\": \"1000\",\n  \"sides\": \"Single\",\n  \"numberOfPrints\": \"2000\",\n  \"color\": \"Black and White\",\n  \"amount\": \"1200\",\n  \"paymentMode\": \"Cash\",\n  \"advance\": \"300\",\n  \"wastagePrint\": \"2%\",\n  \"paymentStatus\": \"Pending\"\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "delete print",
+      "filename": "delete print.bru",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:9090/api/print/2",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "get all prints",
+      "filename": "get all prints.bru",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:9090/api/print",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "update print",
+      "filename": "update print.bru",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:9090/api/print/1",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"customerName\": \"Steve smith\",\n  \"printDetails\": \"Business cards with QR code\",\n  \"mediaType\": \"Cardstock\",\n  \"size\": \"3.5 x 2 inches\",\n  \"quantity\": \"1000\",\n  \"sides\": \"Single\",\n  \"numberOfPrints\": \"2000\",\n  \"color\": \"Black and White\",\n  \"amount\": \"1200\",\n  \"paymentMode\": \"Cash\",\n  \"advance\": \"300\",\n  \"wastagePrint\": \"2%\",\n  \"paymentStatus\": \"Pending\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "PRINTER",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0012731552124023438,
+    "filesCount": 4
+  }
+}

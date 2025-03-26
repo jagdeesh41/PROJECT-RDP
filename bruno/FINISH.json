@@ -1,0 +1,97 @@
+{
+  "name": "FINISH",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "create finish",
+      "filename": "create finish.bru",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost:9090/api/finish",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"cutting\": \"Die Cut\",\n  \"cuttingAmount\": 150.00,\n  \"digitalDyeCutting\": \"Digital Dye Cutting\",\n  \"dyeCuttingSheets\": 500,\n  \"dyeCuttingAmount\": 200.00,\n  \"laminationType\": \"Glossy\",\n  \"laminationSheets\": 500,\n  \"laminationAmount\": 100.00,\n  \"totalSheets\": 1000,\n  \"totalAmount\": 450.00,\n  \"side\": \"Both\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "delete finish",
+      "filename": "delete finish.bru",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:9090/api/finish/1",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "get all finish",
+      "filename": "get all finish.bru",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:9090/api/finish",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "FINISH",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0007162094116210938,
+    "filesCount": 3
+  }
+}

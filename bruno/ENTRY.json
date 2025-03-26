@@ -1,0 +1,71 @@
+{
+  "name": "ENTRY",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "create entry",
+      "filename": "create entry.bru",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost:9090/rdp/entry",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"printRequestDto\":\n  {\n  \"customerName\": \"john Doe\",\n  \"printDetails\": \"Business cards with QR code\",\n  \"mediaType\": \"Cardstock\",\n  \"size\": \"3.5 x 2 inches\",\n  \"quantity\": \"1000\",\n  \"sides\": \"Single\",\n  \"numberOfPrints\": \"2000\",\n  \"color\": \"Black and White\",\n  \"amount\": \"1200\",\n  \"paymentMode\": \"Cash\",\n  \"advance\": \"300\",\n  \"wastagePrint\": \"2%\",\n  \"paymentStatus\": \"Pending\"\n}\n,\n  \"pressId\":1\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "get all entries",
+      "filename": "get all entries.bru",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:9090/rdp/entry",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "ENTRY",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0006847381591796875,
+    "filesCount": 2
+  }
+}
