@@ -1,0 +1,14 @@
+deploymentName: accounts-dev
+serviceName: accounts
+appLabel: accounts
+appName: accounts
+replicaCount: 1
+image:
+  repository: vikas
+  tag: latest
+  pullPolicy: Never
+containerPort: 9090
+service:
+  type: LoadBalancer
+  port: 9090
+  targetPort: 9090

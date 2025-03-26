@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: printing
+  datasource:
+    url: jdbc:mysql://localhost:3307/rdp?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  sql:
+    init:
+      mode: always
+server:
+  port: 9090
+
+
+

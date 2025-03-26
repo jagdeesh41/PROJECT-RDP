@@ -1,0 +1,36 @@
+services:
+  mysql:
+    image: mysql:8.0.32
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # Replace with your desired root password
+      MYSQL_DATABASE: rdp              # Default database for your app              # Database user password
+    ports:
+      - "3307:3306"                       # Expose MySQL on port 3307
+    networks:
+      - rdp-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "mysql-container", "-u", "root", "-proot"]
+      interval: 30s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+
+  rdp-application:
+    build:
+      context: .
+      # Build the Spring Boot app using the Dockerfile in the current directory
+    container_name: printing-app
+    ports:
+      - "9090:9090"                       # Expose Spring Boot application on port 9090
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: printing
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql-container:3306/rdp"
+    networks:
+      - rdp-network
+networks:
+  rdp-network:
+    driver: bridge
