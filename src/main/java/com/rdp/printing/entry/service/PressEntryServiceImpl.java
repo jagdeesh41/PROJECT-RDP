@@ -46,18 +46,21 @@ public class PressEntryServiceImpl implements IPressEntryService{
         FinishRequestDto finishRequestDto = pressEntryRequest.getFinishRequestDto();
         Press press = pressRepository.findById(pressId)
                 .orElseThrow(() -> new ResourceNotFoundException("Press", pressId));
+        //update
+        Long currentAmount = printRequestDto.getAmount();
+        Long outstandingAmount = press.getOutstandingAmount();
+        outstandingAmount+=currentAmount;
+        press.setOutstandingAmount(outstandingAmount);
+        Press savedPress = pressRepository.save(press);
         PressPrint pressPrint = pressPrintMapper.dtoToEntity(printRequestDto);
-        pressPrint.setPress(press);
+        pressPrint.setPress(savedPress);
         if(null!=finishRequestDto)
         {
             PressFinish pressFinish = pressFinishMapper.dtoToEntity(finishRequestDto);
             PressFinish savedPressFinish = pressFinishRepository.save(pressFinish);
             pressPrint.setPressFinish(savedPressFinish);
         }
-
         PressPrint savedPressPrint = pressPrintRepository.save(pressPrint);
-
-
         return "PressEntry created successfully";
     }
     @Override

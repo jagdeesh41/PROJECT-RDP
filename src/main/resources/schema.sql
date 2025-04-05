@@ -5,8 +5,8 @@ CREATE TABLE IF NOT EXISTS press (
     contact_person_name VARCHAR(255),
     phone_number VARCHAR(255),
     last_payment_date TIMESTAMP,
-    last_paid_amount DECIMAL(10, 2),
-    outstanding_amount DECIMAL(10, 2),
+    last_paid_amount BIGINT,
+    outstanding_amount BIGINT,
     total_prints INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -19,12 +19,12 @@ CREATE TABLE IF NOT EXISTS user_finish (
     cutting_amount DECIMAL(10, 2),
     digital_dye_cutting VARCHAR(255),
     dye_cutting_sheets INT,
-    dye_cutting_amount DECIMAL(10, 2),
+    dye_cutting_amount BIGINT,
     lamination_type VARCHAR(255),
     lamination_sheets INT,
-    lamination_amount DECIMAL(10, 2),
+    lamination_amount BIGINT,
     total_sheets INT,
-    total_amount DECIMAL(10, 2),
+    total_amount BIGINT,
     side VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -59,12 +59,12 @@ CREATE TABLE IF NOT EXISTS press_finish (
     cutting_amount DECIMAL(10, 2),
     digital_dye_cutting VARCHAR(255),
     dye_cutting_sheets INT,
-    dye_cutting_amount DECIMAL(10, 2),
+    dye_cutting_amount BIGINT,
     lamination_type VARCHAR(255),
     lamination_sheets INT,
-    lamination_amount DECIMAL(10, 2),
+    lamination_amount BIGINT,
     total_sheets INT,
-    total_amount DECIMAL(10, 2),
+    total_amount BIGINT,
     side VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -93,3 +93,17 @@ CREATE TABLE IF NOT EXISTS press_print (
     CONSTRAINT fk_press_finish_id FOREIGN KEY (press_finish_id) REFERENCES press_finish (press_finish_id),
     CONSTRAINT fk_press_id FOREIGN KEY (press_id) REFERENCES press (press_id)
 );
+
+
+CREATE TABLE IF NOT EXISTS press_transaction (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    transaction_id VARCHAR(255),
+    outstanding_amount BIGINT,
+    current_amount BIGINT,
+    txn_timestamp TIMESTAMP,
+    updated_outstanding_amount BIGINT,
+    press_id INT,
+    CONSTRAINT fk_press FOREIGN KEY (press_id) REFERENCES press(press_id)
+);
+
+

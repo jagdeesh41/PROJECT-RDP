@@ -19,7 +19,7 @@ public class PressResponse {
     private String pressName;
     private String phoneNumber;
     private Integer totalPrints;
-    private BigDecimal outstandingAmount;
+    private Long outstandingAmount;
     private Date lastPaymentDate;
-    private BigDecimal lastPaidAmount;
+    private Long lastPaidAmount;
 }

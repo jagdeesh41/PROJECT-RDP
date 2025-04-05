@@ -35,4 +35,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(response);
     }
+
+    @ExceptionHandler(OverCreditException.class)
+    public ResponseEntity<ApiResponse> handleOverCreditException(OverCreditException e)
+    {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ApiResponse(e.getMessage(),false));
+
+    }
+
 }

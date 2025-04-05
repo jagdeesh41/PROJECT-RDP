@@ -18,7 +18,7 @@ public class PrintRequestDto {
     private String sides;
     private String numberOfPrints;
     private String color;
-    private String amount;
+    private Long amount;
     private String paymentMode;
     private String advance;
     private String wastagePrint;

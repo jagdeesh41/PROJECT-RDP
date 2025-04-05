@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -17,7 +15,7 @@ public class PressRequestDto {
     private String pressName;
     private String phoneNumber;
     private Integer totalPrints;
-    private BigDecimal outstandingAmount;
+    private Long outstandingAmount;
     private Date lastPaymentDate;
-    private BigDecimal lastPaidAmount;
+    private Long lastPaidAmount;
 }

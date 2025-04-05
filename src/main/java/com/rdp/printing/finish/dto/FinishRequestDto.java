@@ -5,22 +5,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class FinishRequestDto {
     private String cutting;
-    private BigDecimal cuttingAmount;
+    private Long cuttingAmount;
     private String digitalDyeCutting;
     private Integer dyeCuttingSheets;
-    private BigDecimal dyeCuttingAmount;
+    private Long dyeCuttingAmount;
     private String laminationType;
     private Integer laminationSheets;
-    private BigDecimal laminationAmount;
+    private Long laminationAmount;
     private Integer totalSheets;
-    private BigDecimal totalAmount;
+    private Long totalAmount;
     private String side;
 }

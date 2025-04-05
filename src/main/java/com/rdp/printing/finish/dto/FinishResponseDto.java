@@ -6,8 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -15,9 +13,9 @@ import java.math.BigDecimal;
 public class FinishResponseDto {
     private long finishId;
     private String cutting;
-    private BigDecimal cuttingAmount;
+    private Long cuttingAmount;
     private String digitalDyeCutting;
-    private BigDecimal dyeCuttingAmount;
+    private Long dyeCuttingAmount;
     private String laminationType;
-    private BigDecimal laminationAmount;
+    private Long laminationAmount;
 }

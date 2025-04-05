@@ -2,14 +2,14 @@ package com.rdp.printing.finish.entity;
 
 
 import com.rdp.printing.common.audit.BaseEntity;
-import com.rdp.printing.print.entity.PressPrint;
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -21,15 +21,15 @@ public class PressFinish extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long pressFinishId;
     private String cutting;
-    private BigDecimal cuttingAmount;
+    private Long cuttingAmount;
     private String digitalDyeCutting;
     private Integer dyeCuttingSheets;
-    private BigDecimal dyeCuttingAmount;
+    private Long dyeCuttingAmount;
     private String laminationType;
     private Integer laminationSheets;
-    private BigDecimal laminationAmount;
+    private Long laminationAmount;
     private Integer totalSheets;
-    private BigDecimal totalAmount;
+    private Long totalAmount;
     private String side;
 }
 
