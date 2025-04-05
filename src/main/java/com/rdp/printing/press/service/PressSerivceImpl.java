@@ -7,7 +7,7 @@ import com.rdp.printing.press.dto.PressResponse;
 import com.rdp.printing.press.dto.SearchPressResponse;
 import com.rdp.printing.press.entity.Press;
 import com.rdp.printing.press.mapper.PressMapper;
-import com.rdp.printing.press.repository.PressRepository;
+import com.rdp.printing.press.repo.PressRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

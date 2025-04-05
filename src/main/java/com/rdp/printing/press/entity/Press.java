@@ -1,8 +1,9 @@
 package com.rdp.printing.press.entity;
 
 
-import com.rdp.printing.finish.entity.BaseEntity;
-import com.rdp.printing.print.entity.Print;
+
+import com.rdp.printing.common.audit.BaseEntity;
+import com.rdp.printing.print.entity.PressPrint;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity(name = "press_ledger")
+@Entity(name = "press")
 public class Press extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +30,8 @@ public class Press extends BaseEntity {
     private BigDecimal outstandingAmount;
     private Date lastPaymentDate;
     private BigDecimal lastPaidAmount;
+
     @OneToMany(mappedBy = "press")
-    private List<Print> prints;
+    private List<PressPrint> pressPrints;
 }
 

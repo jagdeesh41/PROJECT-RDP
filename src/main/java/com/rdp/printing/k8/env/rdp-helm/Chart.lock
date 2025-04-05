@@ -1,9 +1,0 @@
-dependencies:
-- name: mysql-chart
-  repository: file://../../mysql-chart
-  version: 0.1.0
-- name: printing-app
-  repository: file://../../printing-chart
-  version: 0.1.0
-digest: sha256:7328c2002c3a54084102e863b06d66d7194f4e8f7865748e197db45a75167469
-generated: "2025-03-27T01:03:26.389867+05:30"
